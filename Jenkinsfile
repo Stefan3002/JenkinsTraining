@@ -36,8 +36,9 @@ pipeline {
 		}
 		stage('Confirm?') {
 			steps {
-				timeout(time: 3, unit: 'HOURS')
-				input(message: 'Ok to deploy?', ok: 'YES')
+				timeout(time: 3, unit: 'HOURS') {
+					input(message: 'Ok to deploy?', ok: 'YES')
+				}
 			}
 		}
 		stage('Deploy') {

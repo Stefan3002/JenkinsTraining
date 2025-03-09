@@ -17,7 +17,7 @@ pipeline {
 					}
 					post {
 						success {
-							stash(name: 'my-app', includes: 'app_path')
+							sh 'echo "Stashed!"'
 						}
 					}
 				}

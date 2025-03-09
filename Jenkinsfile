@@ -2,7 +2,7 @@ pipeline {
 	agent none
 	stages {
 		stage('Pre-build') {
-			agent linux
+			agent any
 			steps {
 				sh 'echo "Install pre-reqs here!"'
 			}
@@ -11,7 +11,7 @@ pipeline {
 			failFast true
 			parallel {
 				stage('Build-1') {
-					agent linux
+					agent any
 					steps {
 						sh 'echo "I can go with npm i, npm build, stuff here"'
 					}
@@ -22,7 +22,7 @@ pipeline {
 					}
 				}
 				stage('Build-2') {
-					agent linux
+					agent any
 					steps {
 						sh 'echo "Second build in parallel"'
 					}
